@@ -8,3 +8,13 @@ C:\Users\Sitron\source\repos\FileNameRandom\FileNameRandom\obj\Debug\FileNameRan
 C:\Users\Sitron\source\repos\FileNameRandom\FileNameRandom\obj\Debug\FileNameRandom.csproj.CoreCompileInputs.cache
 C:\Users\Sitron\source\repos\FileNameRandom\FileNameRandom\obj\Debug\FileNameRandom.exe
 C:\Users\Sitron\source\repos\FileNameRandom\FileNameRandom\obj\Debug\FileNameRandom.pdb
+D:\VisualStudioProjects\FileRenamer\FileNameRandom\bin\Debug\FileNameRandom.exe.config
+D:\VisualStudioProjects\FileRenamer\FileNameRandom\bin\Debug\FileNameRandom.exe
+D:\VisualStudioProjects\FileRenamer\FileNameRandom\obj\Debug\FileNameRandom.csprojAssemblyReference.cache
+D:\VisualStudioProjects\FileRenamer\FileNameRandom\obj\Debug\FileNameRandom.Form1.resources
+D:\VisualStudioProjects\FileRenamer\FileNameRandom\obj\Debug\FileNameRandom.Properties.Resources.resources
+D:\VisualStudioProjects\FileRenamer\FileNameRandom\obj\Debug\FileNameRandom.csproj.GenerateResource.cache
+D:\VisualStudioProjects\FileRenamer\FileNameRandom\obj\Debug\FileNameRandom.csproj.CoreCompileInputs.cache
+D:\VisualStudioProjects\FileRenamer\FileNameRandom\obj\Debug\FileNameRandom.exe
+D:\VisualStudioProjects\FileRenamer\FileNameRandom\obj\Debug\FileNameRandom.pdb
+D:\VisualStudioProjects\FileRenamer\FileNameRandom\bin\Debug\FileNameRandom.pdb

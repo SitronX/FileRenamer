@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -34,11 +35,23 @@ namespace FileNameRandom
                 if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(fbd.SelectedPath))
                 {
                     files = Directory.GetFiles(fbd.SelectedPath);
+                    Array.Sort(files);
                     textBox1.Text = fbd.SelectedPath;
                     path = fbd.SelectedPath;
 
+                    if (File.Exists(path + "\\ReplacedNames.txt"))
+                    {
+                        button2.Enabled = false;
+                        button3.Enabled = true;
+                    }
+                    else
+                    {
+                        button2.Enabled = true;
+                        button3.Enabled = false;
+                    }
 
-                    System.Windows.Forms.MessageBox.Show("Files found: " + files.Length.ToString(), "Message");
+
+                        
                 }
             }
         }
@@ -46,6 +59,9 @@ namespace FileNameRandom
         private void button2_Click(object sender, EventArgs e)
         {
             int counter = 1;
+
+            string t = string.Join("\n", files);
+            File.WriteAllText(path + "\\ReplacedNames.txt", t);
 
             foreach(string i in files)
             {
@@ -56,6 +72,38 @@ namespace FileNameRandom
             }
 
             MessageBox.Show("Success", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            button2.Enabled = false;
+            button3.Enabled = false;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if(!File.Exists(path + "\\ReplacedNames.txt"))
+            {
+                MessageBox.Show("FileWithNamesDoesntExist", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                return;
+            }
+
+            int counter = 0;
+
+            string[] names = File.ReadAllLines(path + "\\ReplacedNames.txt");
+
+            for(int i=0;i<files.Length-1;i++)
+            { 
+                
+
+                System.IO.File.Move(files[i], names[counter]);
+                counter++;
+            }
+
+            File.Delete(path + "\\ReplacedNames.txt");
+
+            MessageBox.Show("Success", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            button2.Enabled = false;
+            button3.Enabled = false;
         }
     }
 }
