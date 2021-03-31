@@ -1,0 +1,10 @@
+C:\Users\Sitron\source\repos\FileNameRandom\FileNameRandom\bin\Debug\FileNameRandom.exe.config
+C:\Users\Sitron\source\repos\FileNameRandom\FileNameRandom\bin\Debug\FileNameRandom.exe
+C:\Users\Sitron\source\repos\FileNameRandom\FileNameRandom\bin\Debug\FileNameRandom.pdb
+C:\Users\Sitron\source\repos\FileNameRandom\FileNameRandom\obj\Debug\FileNameRandom.csprojAssemblyReference.cache
+C:\Users\Sitron\source\repos\FileNameRandom\FileNameRandom\obj\Debug\FileNameRandom.Form1.resources
+C:\Users\Sitron\source\repos\FileNameRandom\FileNameRandom\obj\Debug\FileNameRandom.Properties.Resources.resources
+C:\Users\Sitron\source\repos\FileNameRandom\FileNameRandom\obj\Debug\FileNameRandom.csproj.GenerateResource.cache
+C:\Users\Sitron\source\repos\FileNameRandom\FileNameRandom\obj\Debug\FileNameRandom.csproj.CoreCompileInputs.cache
+C:\Users\Sitron\source\repos\FileNameRandom\FileNameRandom\obj\Debug\FileNameRandom.exe
+C:\Users\Sitron\source\repos\FileNameRandom\FileNameRandom\obj\Debug\FileNameRandom.pdb
