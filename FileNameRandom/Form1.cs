@@ -14,7 +14,7 @@ namespace FileNameRandom
 {
     public partial class Form1 : Form
     {
-        string[] files;
+        List<string> files=new List<string>();
         string path = "";
         public Form1()
         {
@@ -34,8 +34,20 @@ namespace FileNameRandom
 
                 if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(fbd.SelectedPath))
                 {
-                    files = Directory.GetFiles(fbd.SelectedPath);
-                    Array.Sort(files);
+                    files = Directory.GetFiles(fbd.SelectedPath).ToList();
+                    
+                    if(files.Contains(fbd.SelectedPath+"\\ReplacedNames.txt"))
+                    {
+                        files.Remove(fbd.SelectedPath + "\\ReplacedNames.txt");
+                    }
+
+                    
+                    files.Sort(new Comparer());     //Windows compare equivalent
+
+                   
+
+
+
                     textBox1.Text = fbd.SelectedPath;
                     path = fbd.SelectedPath;
 
@@ -65,7 +77,18 @@ namespace FileNameRandom
 
             foreach(string i in files)
             {
-                string name =path+"\\"+ counter + "." + i.Split('.').Last();
+                string name;
+
+                if(String.IsNullOrEmpty(textBox2.Text))
+                {
+                     name = path + "\\" + counter + "." + i.Split('.').Last();
+
+                }
+                else
+                {
+                     name = path + "\\" + counter + textBox2.Text;
+
+                }
                 counter++;
 
                 System.IO.File.Move(i, name);
@@ -90,7 +113,7 @@ namespace FileNameRandom
 
             string[] names = File.ReadAllLines(path + "\\ReplacedNames.txt");
 
-            for(int i=0;i<files.Length-1;i++)
+            for(int i=0;i<files.Count;i++)
             { 
                 
 
