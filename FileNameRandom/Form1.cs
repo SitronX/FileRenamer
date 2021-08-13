@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,15 +16,20 @@ namespace FileNameRandom
     public partial class Form1 : Form
     {
         List<string> files=new List<string>();
-        string path = "";
+        string path;
+
+        string AesKey;
         public Form1()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -40,8 +46,12 @@ namespace FileNameRandom
                     {
                         files.Remove(fbd.SelectedPath + "\\ReplacedNames.txt");
                     }
+                    else if (files.Contains(fbd.SelectedPath + "\\ReplacedNames"))
+                    {
+                        files.Remove(fbd.SelectedPath + "\\ReplacedNames");
+                    }
 
-                    
+
                     files.Sort(new Comparer());     //Windows compare equivalent
 
                    
@@ -51,7 +61,7 @@ namespace FileNameRandom
                     textBox1.Text = fbd.SelectedPath;
                     path = fbd.SelectedPath;
 
-                    if (File.Exists(path + "\\ReplacedNames.txt"))
+                    if (File.Exists(path + "\\ReplacedNames.txt")|| File.Exists(path + "\\ReplacedNames"))
                     {
                         button2.Enabled = false;
                         button3.Enabled = true;
@@ -73,9 +83,35 @@ namespace FileNameRandom
             int counter = 1;
 
             string t = string.Join("\n", files);
-            File.WriteAllText(path + "\\ReplacedNames.txt", t);
 
-            foreach(string i in files)
+            if(String.IsNullOrEmpty(AesKey))
+            {
+                File.WriteAllText(path + "\\ReplacedNames.txt", t);
+            }
+            else
+            {
+                Aes a = Aes.Create();
+
+                using (SHA256 mySHA256 = SHA256.Create())
+                {
+                                               
+                    a.Key = mySHA256.ComputeHash(Encoding.ASCII.GetBytes(AesKey));
+                    a.IV = new byte[16];
+                                               
+                }
+
+                byte[] arr = AES.EncryptStringToBytes_Aes(t, a.Key, a.IV);
+
+                File.WriteAllBytes(path + "\\ReplacedNames", arr);
+
+            }
+
+
+
+
+
+
+            foreach (string i in files)
             {
                 string name;
 
@@ -102,18 +138,52 @@ namespace FileNameRandom
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if(!File.Exists(path + "\\ReplacedNames.txt"))
-            {
-                MessageBox.Show("FileWithNamesDoesntExist", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                return;
-            }
+            
 
             int counter = 0;
 
-            string[] names = File.ReadAllLines(path + "\\ReplacedNames.txt");
+            string[] names;
 
-            for(int i=0;i<files.Count;i++)
+            if(File.Exists(path + "\\ReplacedNames.txt"))
+            {
+                
+                names = File.ReadAllLines(path + "\\ReplacedNames.txt");
+                
+            }
+            else if(File.Exists(path + "\\ReplacedNames"))
+            {
+                if(String.IsNullOrEmpty(AesKey))
+                {
+                    MessageBox.Show("PasswordNotEntered", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+
+                }
+
+                Aes a = Aes.Create();
+
+                using (SHA256 mySHA256 = SHA256.Create())
+                {
+
+                    a.Key = mySHA256.ComputeHash(Encoding.ASCII.GetBytes(AesKey));
+                    a.IV = new byte[16];
+
+                }
+
+                string tmp = AES.DecryptStringFromBytes_Aes(File.ReadAllBytes(path + "\\ReplacedNames"), a.Key, a.IV);
+                names = tmp.Split('\n');
+                
+
+            }
+            else
+            {
+                MessageBox.Show("NameFileDoesntExist", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            
+
+
+            for (int i=0;i<files.Count;i++)
             { 
                 
 
@@ -122,11 +192,25 @@ namespace FileNameRandom
             }
 
             File.Delete(path + "\\ReplacedNames.txt");
+            File.Delete(path + "\\ReplacedNames");
 
             MessageBox.Show("Success", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             button2.Enabled = false;
             button3.Enabled = false;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            KeyInput tmp=new KeyInput();
+            tmp.keyEntered += GreyKeyOnEnter;
+            tmp.Show();
+
+        }
+        private void GreyKeyOnEnter(Object obj, EventArgs args)
+        {
+            button4.Enabled = false;
+            AesKey = (string)obj;
         }
     }
 }
