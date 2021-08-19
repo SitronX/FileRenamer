@@ -34,48 +34,72 @@ namespace FileNameRandom
 
         private void button1_Click(object sender, EventArgs e)
         {
-            using (FolderBrowserDialog fbd = new FolderBrowserDialog())
+            if (textBox1.Text !="")
             {
-                DialogResult result = fbd.ShowDialog();
-
-                if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(fbd.SelectedPath))
+                if (Directory.Exists(textBox1.Text))
                 {
-                    files = Directory.GetFiles(fbd.SelectedPath).ToList();
-                    
-                    if(files.Contains(fbd.SelectedPath+"\\ReplacedNames.txt"))
+                    path = textBox1.Text;
+                    textBox1.Text = path;
+
+                }
+                else
+                {
+                    MessageBox.Show("PathDoesntExist", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+            else
+            {
+                using (FolderBrowserDialog fbd = new FolderBrowserDialog())
+                {
+                    DialogResult result = fbd.ShowDialog();
+
+                    if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(fbd.SelectedPath))
                     {
-                        files.Remove(fbd.SelectedPath + "\\ReplacedNames.txt");
+                        path = fbd.SelectedPath;
+                        textBox1.Text = path;
                     }
-                    else if (files.Contains(fbd.SelectedPath + "\\ReplacedNames"))
-                    {
-                        files.Remove(fbd.SelectedPath + "\\ReplacedNames");
-                    }
+                }
+            }
+
+            files = Directory.GetFiles(path).ToList();
+
+            if (files.Contains(path + "\\ReplacedNames.txt"))
+            {
+                files.Remove(path + "\\ReplacedNames.txt");
+            }
+            else if (files.Contains(path + "\\ReplacedNames"))
+            {
+                files.Remove(path + "\\ReplacedNames");
+            }
 
 
-                    files.Sort(new Comparer());     //Windows compare equivalent
-
-                   
+            files.Sort(new Comparer());     //Windows compare equivalent
 
 
 
-                    textBox1.Text = fbd.SelectedPath;
-                    path = fbd.SelectedPath;
-
-                    if (File.Exists(path + "\\ReplacedNames.txt")|| File.Exists(path + "\\ReplacedNames"))
-                    {
-                        button2.Enabled = false;
-                        button3.Enabled = true;
-                    }
-                    else
-                    {
-                        button2.Enabled = true;
-                        button3.Enabled = false;
-                    }
 
 
                         
-                }
+                        
+
+            if (File.Exists(path + "\\ReplacedNames.txt") || File.Exists(path + "\\ReplacedNames"))
+            {
+                button2.Enabled = false;
+                button3.Enabled = true;
             }
+            else
+            {
+                button2.Enabled = true;
+                button3.Enabled = false;
+            }
+
+
+
+                    
+                
+            
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -211,6 +235,13 @@ namespace FileNameRandom
         {
             button4.Enabled = false;
             AesKey = (string)obj;
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            path = textBox1.Text;
+            button2.Enabled = false;
+            button3.Enabled = false;
         }
     }
 }

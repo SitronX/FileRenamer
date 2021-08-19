@@ -29,3 +29,4 @@ D:\Github\FileRenamer\FileNameRandom\obj\Debug\FileNameRandom.csproj.CoreCompile
 D:\Github\FileRenamer\FileNameRandom\obj\Debug\FileNameRandom.exe
 D:\Github\FileRenamer\FileNameRandom\obj\Debug\FileNameRandom.pdb
 D:\Github\FileRenamer\FileNameRandom\obj\Debug\FileNameRandom.KeyInput.resources
+D:\VisualStudioProjects\FileRenamer\FileNameRandom\obj\Debug\FileNameRandom.KeyInput.resources

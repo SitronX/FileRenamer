@@ -42,7 +42,7 @@ namespace FileNameRandom
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(85, 23);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 35);
             this.button1.TabIndex = 0;
@@ -53,16 +53,17 @@ namespace FileNameRandom
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(46, 63);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(180, 20);
             this.textBox1.TabIndex = 1;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // button2
             // 
+            this.button2.Enabled = false;
             this.button2.Location = new System.Drawing.Point(85, 93);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 35);
             this.button2.TabIndex = 2;
@@ -72,8 +73,9 @@ namespace FileNameRandom
             // 
             // button3
             // 
+            this.button3.Enabled = false;
             this.button3.Location = new System.Drawing.Point(85, 132);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(100, 35);
             this.button3.TabIndex = 3;
@@ -84,7 +86,7 @@ namespace FileNameRandom
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(230, 63);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(39, 20);
             this.textBox2.TabIndex = 4;
@@ -115,7 +117,7 @@ namespace FileNameRandom
             // 
             this.button4.Image = global::FileNameRandom.Properties.Resources.key1;
             this.button4.Location = new System.Drawing.Point(273, 56);
-            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(33, 33);
             this.button4.TabIndex = 8;
@@ -135,7 +137,7 @@ namespace FileNameRandom
             this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "RenameFiles";
             this.Load += new System.EventHandler(this.Form1_Load);
