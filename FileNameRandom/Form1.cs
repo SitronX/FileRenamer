@@ -85,11 +85,13 @@ namespace FileNameRandom
 
             if (File.Exists(path + "\\ReplacedNames.txt") || File.Exists(path + "\\ReplacedNames"))
             {
+                button6.Enabled = true;
                 button2.Enabled = false;
                 button3.Enabled = true;
             }
             else
             {
+                button6.Enabled = true;
                 button2.Enabled = true;
                 button3.Enabled = false;
             }
@@ -138,15 +140,15 @@ namespace FileNameRandom
             foreach (string i in files)
             {
                 string name;
-
-                if(String.IsNullOrEmpty(textBox2.Text))
+                textBox2.Text = textBox2.Text.Replace(".", "");
+                if (String.IsNullOrEmpty(textBox2.Text))
                 {
-                     name = path + "\\" + counter + "." + i.Split('.').Last();
+                    name = path + "\\" + counter + "." + i.Split('.').Last();
 
                 }
                 else
                 {
-                     name = path + "\\" + counter + textBox2.Text;
+                     name = path + "\\" + counter + "."+ textBox2.Text;
 
                 }
                 counter++;
@@ -158,6 +160,7 @@ namespace FileNameRandom
 
             button2.Enabled = false;
             button3.Enabled = false;
+            button6.Enabled = false;
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -222,6 +225,7 @@ namespace FileNameRandom
 
             button2.Enabled = false;
             button3.Enabled = false;
+            button6.Enabled = false;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -242,6 +246,33 @@ namespace FileNameRandom
             path = textBox1.Text;
             button2.Enabled = false;
             button3.Enabled = false;
+            button6.Enabled = false;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrEmpty(textBox2.Text))
+            {
+                textBox2.Text = textBox2.Text.Replace(".", "");
+                foreach (string i in files)
+                {
+                    string tmp = i.Split('.').Last();
+                    string tmp2 = i.Replace(tmp, textBox2.Text);
+                    System.IO.File.Move(i, tmp2);
+                }
+
+                MessageBox.Show("Success", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                button2.Enabled = false;
+                button3.Enabled = false;
+                button6.Enabled = false;
+            }
+            else
+            {
+                MessageBox.Show("Suffix didnt entered", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            
         }
     }
 }

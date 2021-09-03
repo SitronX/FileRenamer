@@ -30,3 +30,14 @@ D:\Github\FileRenamer\FileNameRandom\obj\Debug\FileNameRandom.exe
 D:\Github\FileRenamer\FileNameRandom\obj\Debug\FileNameRandom.pdb
 D:\Github\FileRenamer\FileNameRandom\obj\Debug\FileNameRandom.KeyInput.resources
 D:\VisualStudioProjects\FileRenamer\FileNameRandom\obj\Debug\FileNameRandom.KeyInput.resources
+F:\GithubSync\FileRenamer\FileNameRandom\bin\Debug\FileNameRandom.exe.config
+F:\GithubSync\FileRenamer\FileNameRandom\bin\Debug\FileNameRandom.exe
+F:\GithubSync\FileRenamer\FileNameRandom\bin\Debug\FileNameRandom.pdb
+F:\GithubSync\FileRenamer\FileNameRandom\obj\Debug\FileNameRandom.csproj.AssemblyReference.cache
+F:\GithubSync\FileRenamer\FileNameRandom\obj\Debug\FileNameRandom.Form1.resources
+F:\GithubSync\FileRenamer\FileNameRandom\obj\Debug\FileNameRandom.KeyInput.resources
+F:\GithubSync\FileRenamer\FileNameRandom\obj\Debug\FileNameRandom.Properties.Resources.resources
+F:\GithubSync\FileRenamer\FileNameRandom\obj\Debug\FileNameRandom.csproj.GenerateResource.cache
+F:\GithubSync\FileRenamer\FileNameRandom\obj\Debug\FileNameRandom.csproj.CoreCompileInputs.cache
+F:\GithubSync\FileRenamer\FileNameRandom\obj\Debug\FileNameRandom.exe
+F:\GithubSync\FileRenamer\FileNameRandom\obj\Debug\FileNameRandom.pdb
