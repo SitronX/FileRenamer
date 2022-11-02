@@ -61,8 +61,14 @@ namespace FileNameRandom
                     }
                 }
             }
-
-            files = Directory.GetFiles(path).ToList();
+            try
+            {
+                files = Directory.GetFiles(path).ToList();
+            }
+            catch
+            {
+                return;
+            }
 
             if (files.Contains(path + "\\ReplacedNames.txt"))
             {
@@ -73,15 +79,7 @@ namespace FileNameRandom
                 files.Remove(path + "\\ReplacedNames");
             }
 
-
             files.Sort(new Comparer());     //Windows compare equivalent
-
-
-
-
-
-                        
-                        
 
             if (File.Exists(path + "\\ReplacedNames.txt") || File.Exists(path + "\\ReplacedNames"))
             {
@@ -95,22 +93,22 @@ namespace FileNameRandom
                 button2.Enabled = true;
                 button3.Enabled = false;
             }
-
-
-
-                    
-                
-            
-            
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             int counter = 1;
 
+
+            if (shuffleCheckbox.Checked)
+            {
+                 Shuffle(files);
+            }
             string t = string.Join("\n", files);
 
-            if(String.IsNullOrEmpty(AesKey))
+
+
+            if (String.IsNullOrEmpty(AesKey))
             {
                 File.WriteAllText(path + "\\ReplacedNames.txt", t);
             }
@@ -131,10 +129,6 @@ namespace FileNameRandom
                 File.WriteAllBytes(path + "\\ReplacedNames", arr);
 
             }
-
-
-
-
 
 
             foreach (string i in files)
@@ -169,17 +163,17 @@ namespace FileNameRandom
 
             int counter = 0;
 
-            string[] names;
+            List<string> names;
 
-            if(File.Exists(path + "\\ReplacedNames.txt"))
+            if (File.Exists(path + "\\ReplacedNames.txt"))
             {
-                
-                names = File.ReadAllLines(path + "\\ReplacedNames.txt");
-                
+
+                names = File.ReadAllLines(path + "\\ReplacedNames.txt").ToList();
+
             }
-            else if(File.Exists(path + "\\ReplacedNames"))
+            else if (File.Exists(path + "\\ReplacedNames"))
             {
-                if(String.IsNullOrEmpty(AesKey))
+                if (String.IsNullOrEmpty(AesKey))
                 {
                     MessageBox.Show("PasswordNotEntered", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
@@ -197,8 +191,8 @@ namespace FileNameRandom
                 }
 
                 string tmp = AES.DecryptStringFromBytes_Aes(File.ReadAllBytes(path + "\\ReplacedNames"), a.Key, a.IV);
-                names = tmp.Split('\n');
-                
+                names = tmp.Split('\n').ToList();
+
 
             }
             else
@@ -206,8 +200,6 @@ namespace FileNameRandom
                 MessageBox.Show("NameFileDoesntExist", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
-            
 
 
             for (int i=0;i<files.Count;i++)
@@ -273,6 +265,19 @@ namespace FileNameRandom
             }
 
             
+        }
+        public void Shuffle<T>(IList<T> list)
+        {
+            int n = list.Count;
+            Random rnd = new Random();
+            while (n > 1)
+            {
+                int k = (rnd.Next(0, n) % n);
+                n--;
+                T value = list[k];
+                list[k] = list[n];
+                list[n] = value;
+            }
         }
     }
 }

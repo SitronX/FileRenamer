@@ -41,3 +41,15 @@ F:\GithubSync\FileRenamer\FileNameRandom\obj\Debug\FileNameRandom.csproj.Generat
 F:\GithubSync\FileRenamer\FileNameRandom\obj\Debug\FileNameRandom.csproj.CoreCompileInputs.cache
 F:\GithubSync\FileRenamer\FileNameRandom\obj\Debug\FileNameRandom.exe
 F:\GithubSync\FileRenamer\FileNameRandom\obj\Debug\FileNameRandom.pdb
+H:\GithubSync\FileRenamer\FileNameRandom\bin\Debug\FileNameRandom.exe.config
+H:\GithubSync\FileRenamer\FileNameRandom\bin\Debug\FileNameRandom.exe
+H:\GithubSync\FileRenamer\FileNameRandom\bin\Debug\FileNameRandom.pdb
+H:\GithubSync\FileRenamer\FileNameRandom\obj\Debug\FileNameRandom.csproj.AssemblyReference.cache
+H:\GithubSync\FileRenamer\FileNameRandom\obj\Debug\FileNameRandom.csproj.SuggestedBindingRedirects.cache
+H:\GithubSync\FileRenamer\FileNameRandom\obj\Debug\FileNameRandom.Form1.resources
+H:\GithubSync\FileRenamer\FileNameRandom\obj\Debug\FileNameRandom.KeyInput.resources
+H:\GithubSync\FileRenamer\FileNameRandom\obj\Debug\FileNameRandom.Properties.Resources.resources
+H:\GithubSync\FileRenamer\FileNameRandom\obj\Debug\FileNameRandom.csproj.GenerateResource.cache
+H:\GithubSync\FileRenamer\FileNameRandom\obj\Debug\FileNameRandom.csproj.CoreCompileInputs.cache
+H:\GithubSync\FileRenamer\FileNameRandom\obj\Debug\FileNameRandom.exe
+H:\GithubSync\FileRenamer\FileNameRandom\obj\Debug\FileNameRandom.pdb
