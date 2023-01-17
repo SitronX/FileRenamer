@@ -86,12 +86,15 @@ namespace FileNameRandom
                 button6.Enabled = true;
                 button2.Enabled = false;
                 button3.Enabled = true;
+                button5.Enabled = false;
             }
             else
             {
                 button6.Enabled = true;
                 button2.Enabled = true;
                 button3.Enabled = false;
+                button5.Enabled = true;
+
             }
         }
 
@@ -278,6 +281,13 @@ namespace FileNameRandom
                 list[k] = list[n];
                 list[n] = value;
             }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            ReplaceChars cr = new ReplaceChars(files);
+            cr.Show();
+            cr.charsChanged += button1_Click;
         }
     }
 }

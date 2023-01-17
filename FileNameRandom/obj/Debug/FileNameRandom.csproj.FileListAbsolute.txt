@@ -53,3 +53,4 @@ H:\GithubSync\FileRenamer\FileNameRandom\obj\Debug\FileNameRandom.csproj.Generat
 H:\GithubSync\FileRenamer\FileNameRandom\obj\Debug\FileNameRandom.csproj.CoreCompileInputs.cache
 H:\GithubSync\FileRenamer\FileNameRandom\obj\Debug\FileNameRandom.exe
 H:\GithubSync\FileRenamer\FileNameRandom\obj\Debug\FileNameRandom.pdb
+H:\GithubSync\FileRenamer\FileNameRandom\obj\Debug\FileNameRandom.ReplaceChars.resources

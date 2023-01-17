@@ -1,0 +1,13 @@
+H:\GithubSync\FileRenamer\FileNameRandom\bin\Release\FileNameRandom.exe.config
+H:\GithubSync\FileRenamer\FileNameRandom\bin\Release\FileNameRandom.exe
+H:\GithubSync\FileRenamer\FileNameRandom\bin\Release\FileNameRandom.pdb
+H:\GithubSync\FileRenamer\FileNameRandom\obj\Release\FileNameRandom.csproj.AssemblyReference.cache
+H:\GithubSync\FileRenamer\FileNameRandom\obj\Release\FileNameRandom.csproj.SuggestedBindingRedirects.cache
+H:\GithubSync\FileRenamer\FileNameRandom\obj\Release\FileNameRandom.Form1.resources
+H:\GithubSync\FileRenamer\FileNameRandom\obj\Release\FileNameRandom.KeyInput.resources
+H:\GithubSync\FileRenamer\FileNameRandom\obj\Release\FileNameRandom.Properties.Resources.resources
+H:\GithubSync\FileRenamer\FileNameRandom\obj\Release\FileNameRandom.csproj.GenerateResource.cache
+H:\GithubSync\FileRenamer\FileNameRandom\obj\Release\FileNameRandom.csproj.CoreCompileInputs.cache
+H:\GithubSync\FileRenamer\FileNameRandom\obj\Release\FileNameRandom.exe
+H:\GithubSync\FileRenamer\FileNameRandom\obj\Release\FileNameRandom.pdb
+H:\GithubSync\FileRenamer\FileNameRandom\obj\Release\FileNameRandom.ReplaceChars.resources

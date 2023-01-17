@@ -39,6 +39,7 @@ namespace FileNameRandom
             this.button4 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.shuffleCheckbox = new System.Windows.Forms.CheckBox();
+            this.button5 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -64,7 +65,7 @@ namespace FileNameRandom
             // button2
             // 
             this.button2.Enabled = false;
-            this.button2.Location = new System.Drawing.Point(46, 110);
+            this.button2.Location = new System.Drawing.Point(11, 110);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 35);
@@ -76,7 +77,7 @@ namespace FileNameRandom
             // button3
             // 
             this.button3.Enabled = false;
-            this.button3.Location = new System.Drawing.Point(169, 110);
+            this.button3.Location = new System.Drawing.Point(126, 110);
             this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(100, 35);
@@ -147,11 +148,23 @@ namespace FileNameRandom
             this.shuffleCheckbox.Text = "Shuffle";
             this.shuffleCheckbox.UseVisualStyleBackColor = true;
             // 
+            // button5
+            // 
+            this.button5.Enabled = false;
+            this.button5.Location = new System.Drawing.Point(241, 110);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(57, 35);
+            this.button5.TabIndex = 12;
+            this.button5.Text = "Replace Chars";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(310, 183);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.shuffleCheckbox);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button4);
@@ -183,6 +196,7 @@ namespace FileNameRandom
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.CheckBox shuffleCheckbox;
+        private System.Windows.Forms.Button button5;
     }
 }
 
