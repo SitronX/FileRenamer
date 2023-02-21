@@ -251,9 +251,30 @@ namespace FileNameRandom
                 textBox2.Text = textBox2.Text.Replace(".", "");
                 foreach (string i in files)
                 {
-                    string tmp = i.Split('.').Last();
-                    string tmp2 = i.Replace(tmp, textBox2.Text);
-                    System.IO.File.Move(i, tmp2);
+                    string[] arr = i.Split('.');
+
+                    try
+                    {
+
+
+                        if (arr.Length > 1&&!arr.Last().Contains("\\")&&!arr.Last().Contains("/"))
+                        {
+                            string tmp = i.Split('.').Last();
+                            string tmp2 = i.Replace(tmp, textBox2.Text);
+                            System.IO.File.Move(i, tmp2);
+                        }
+                        else
+                        {
+                            System.IO.File.Move(i, $"{i}.{textBox2.Text}");
+                        }
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Some file probably already exists", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+
+                    }
+
                 }
 
                 MessageBox.Show("Success", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
