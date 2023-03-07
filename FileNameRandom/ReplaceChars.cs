@@ -20,6 +20,10 @@ namespace FileNameRandom
         {
             InitializeComponent();
             _files = files;
+
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
         }
 
         private void button1_Click(object sender, EventArgs e)

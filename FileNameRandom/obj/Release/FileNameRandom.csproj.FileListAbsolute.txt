@@ -11,3 +11,16 @@ H:\GithubSync\FileRenamer\FileNameRandom\obj\Release\FileNameRandom.csproj.CoreC
 H:\GithubSync\FileRenamer\FileNameRandom\obj\Release\FileNameRandom.exe
 H:\GithubSync\FileRenamer\FileNameRandom\obj\Release\FileNameRandom.pdb
 H:\GithubSync\FileRenamer\FileNameRandom\obj\Release\FileNameRandom.ReplaceChars.resources
+D:\Github\FileRenamer\FileNameRandom\bin\Release\FileNameRandom.exe.config
+D:\Github\FileRenamer\FileNameRandom\bin\Release\FileNameRandom.exe
+D:\Github\FileRenamer\FileNameRandom\bin\Release\FileNameRandom.pdb
+D:\Github\FileRenamer\FileNameRandom\obj\Release\FileNameRandom.csproj.AssemblyReference.cache
+D:\Github\FileRenamer\FileNameRandom\obj\Release\FileNameRandom.csproj.SuggestedBindingRedirects.cache
+D:\Github\FileRenamer\FileNameRandom\obj\Release\FileNameRandom.Form1.resources
+D:\Github\FileRenamer\FileNameRandom\obj\Release\FileNameRandom.KeyInput.resources
+D:\Github\FileRenamer\FileNameRandom\obj\Release\FileNameRandom.Properties.Resources.resources
+D:\Github\FileRenamer\FileNameRandom\obj\Release\FileNameRandom.ReplaceChars.resources
+D:\Github\FileRenamer\FileNameRandom\obj\Release\FileNameRandom.csproj.GenerateResource.cache
+D:\Github\FileRenamer\FileNameRandom\obj\Release\FileNameRandom.csproj.CoreCompileInputs.cache
+D:\Github\FileRenamer\FileNameRandom\obj\Release\FileNameRandom.exe
+D:\Github\FileRenamer\FileNameRandom\obj\Release\FileNameRandom.pdb

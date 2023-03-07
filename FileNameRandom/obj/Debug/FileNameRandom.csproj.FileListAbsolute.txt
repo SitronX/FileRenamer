@@ -54,3 +54,5 @@ H:\GithubSync\FileRenamer\FileNameRandom\obj\Debug\FileNameRandom.csproj.CoreCom
 H:\GithubSync\FileRenamer\FileNameRandom\obj\Debug\FileNameRandom.exe
 H:\GithubSync\FileRenamer\FileNameRandom\obj\Debug\FileNameRandom.pdb
 H:\GithubSync\FileRenamer\FileNameRandom\obj\Debug\FileNameRandom.ReplaceChars.resources
+D:\Github\FileRenamer\FileNameRandom\obj\Debug\FileNameRandom.csproj.SuggestedBindingRedirects.cache
+D:\Github\FileRenamer\FileNameRandom\obj\Debug\FileNameRandom.ReplaceChars.resources

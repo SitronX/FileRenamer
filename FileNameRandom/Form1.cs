@@ -140,7 +140,12 @@ namespace FileNameRandom
                 textBox2.Text = textBox2.Text.Replace(".", "");
                 if (String.IsNullOrEmpty(textBox2.Text))
                 {
-                    name = path + "\\" + counter + "." + i.Split('.').Last();
+                    string[] arr = i.Split('.');
+
+                    if (arr.Length > 1)
+                        name = path + "\\" + counter + "." + i.Split('.').Last();
+                    else
+                        name = path + "\\" + counter;
 
                 }
                 else
