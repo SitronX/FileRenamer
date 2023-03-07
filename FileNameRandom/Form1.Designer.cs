@@ -62,6 +62,7 @@ namespace FileNameRandom
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(239, 22);
             this.textBox1.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.textBox1, "Enter path");
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // button2
@@ -97,6 +98,7 @@ namespace FileNameRandom
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(51, 22);
             this.textBox2.TabIndex = 4;
+            this.toolTip1.SetToolTip(this.textBox2, "Enter suffix");
             // 
             // label1
             // 
