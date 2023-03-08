@@ -5,7 +5,7 @@
 
 # FileRenamer
 
-Simple bulk file renamer working on all files in the folder
+Simple bulk file renamer working with all files in specified folder
 
 ## Features
 - Replace all file names in the folder with numbers
