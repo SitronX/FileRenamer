@@ -5,7 +5,9 @@
 
 # FileRenamer
 
-Simple bulk file renamer working with all files in specified folder
+Simple bulk file renamer working with all files in specified folder.
+
+Downloadable builds are available in the [Release](https://github.com/SitronX/FileRenamer/releases) section
 
 ## Features
 - Replace all file names in the folder with numbers
